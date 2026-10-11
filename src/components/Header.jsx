@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi';
 import { useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,13 +15,15 @@ const Header = () => {
         <h1 className="font-extrabold text-[27px] text-[#1e3a59]">Medicares</h1>
         <nav className="hidden md:block text-[#1e3a59] font-bold text-[19px]">
           <ul className="flex gap-10">
-            <li className='hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg'>
+            <li className="hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg">
               <Link to={'/'}>Home</Link>
             </li>
-            <li className='hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg'>
-              <Link to={'/services'}>Services</Link>
+            <li className="hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg">
+              <HashLink smooth to="/#services">
+                Services
+              </HashLink>
             </li>
-            <li className='hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg'>
+            <li className="hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg">
               <Link to={'/about'}>About</Link>
             </li>
           </ul>
@@ -44,17 +47,44 @@ const Header = () => {
       {isOpen && (
         <nav className="md:hidden mt-5 flex flex-col  gap-5">
           <ul className="flex flex-col gap-6 text-[#1e3a59] font-bold text-[19px]">
-            <li className='hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md'>
-              <Link to={'/'}>Home</Link>
+            <li
+              onClick={() => setIsOpen(false)}
+              className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
+            >
+              <Link to={'/'} onClick={handleOpen}>
+                Home
+              </Link>
             </li>
-            <li className='hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md'>
-              <Link to={'/services'}>Services</Link>
+            <li
+              className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md cursor-pointer"
+              onClick={() => {
+                setIsOpen(false); 
+
+                setTimeout(()=>{
+                  const target =document.getElementById("services")
+                  if (target){
+                    target.scrollIntoView({behavior:"smooth" ,block:"start" })
+                  }
+                },100)
+              }}
+              
+            >
+              Services
             </li>
-            <li className='hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md'>
-              <Link to={'/about'}>About</Link>
+
+            <li
+              onClick={() => setIsOpen(false)}
+              className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
+            >
+              <Link to={'/about'} onClick={handleOpen}>
+                About
+              </Link>
             </li>
           </ul>
-          <button className=" text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600 w-full">
+          <button
+            onClick={() => setIsOpen(false)}
+            className=" text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600 w-full"
+          >
             Contact Us
           </button>
         </nav>
