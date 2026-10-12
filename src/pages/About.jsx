@@ -63,7 +63,7 @@ const About = () => {
           Join Medicares today and connect with trusted doctors instantly.
         </p>
         <button className="bg-blue-600 text-white px-5 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 w-fit">
-          <Link to={"/contact"}>Contact Us</Link>
+          <Link to={'/contact'}>Contact Us</Link>
         </button>
       </div>
     </section>

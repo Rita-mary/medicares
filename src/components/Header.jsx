@@ -22,6 +22,7 @@ const Header = () => {
               <HashLink smooth to="/#services">
                 Services
               </HashLink>
+              {/* <a href="/#services">Services</a> */}
             </li>
             <li className="hover:bg-blue-200 transition ease-in duration-300 hover:text-blue-500 py-1 px-4 rounded-lg">
               <Link to={'/about'}>About</Link>
@@ -30,7 +31,7 @@ const Header = () => {
         </nav>
         <div>
           <button className="hidden md:block text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600">
-            <Link to={"/contact"}>Contact Us</Link>
+            <Link to={'/contact'}>Contact Us</Link>
           </button>
           {!isOpen && (
             <button className="md:hidden" onClick={handleOpen}>
@@ -51,9 +52,7 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
             >
-              <Link to={'/'} >
-                Home
-              </Link>
+              <Link to={'/'}>Home</Link>
             </li>
             <li
               className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md cursor-pointer"
@@ -71,21 +70,20 @@ const Header = () => {
             >
               Services
             </li>
+            
 
             <li
               onClick={() => setIsOpen(false)}
               className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
             >
-              <Link to={'/about'} >
-                About
-              </Link>
+              <Link to={'/about'}>About</Link>
             </li>
           </ul>
           <button
             onClick={() => setIsOpen(false)}
             className=" text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600 w-full"
           >
-            <Link to={"/contact"}>Contact Us</Link>
+            <Link to={'/contact'}>Contact Us</Link>
           </button>
         </nav>
       )}
