@@ -30,7 +30,7 @@ const Header = () => {
         </nav>
         <div>
           <button className="hidden md:block text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600">
-            Contact Us
+            <Link to={"/contact"}>Contact Us</Link>
           </button>
           {!isOpen && (
             <button className="md:hidden" onClick={handleOpen}>
@@ -51,7 +51,7 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
             >
-              <Link to={'/'} onClick={handleOpen}>
+              <Link to={'/'} >
                 Home
               </Link>
             </li>
@@ -76,7 +76,7 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               className="hover:bg-blue-300 transition ease-in duration-300 hover:text-blue-500 py-2 px-3 rounded-md"
             >
-              <Link to={'/about'} onClick={handleOpen}>
+              <Link to={'/about'} >
                 About
               </Link>
             </li>
@@ -85,7 +85,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className=" text-[19px] py-2 px-5 border transition duration-300 rounded-lg hover:text-white hover:bg-blue-600 w-full"
           >
-            Contact Us
+            <Link to={"/contact"}>Contact Us</Link>
           </button>
         </nav>
       )}

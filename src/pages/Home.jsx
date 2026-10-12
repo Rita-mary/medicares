@@ -3,10 +3,10 @@ import medcare2 from '../assets/medcare2.png';
 import medcare3 from '../assets/medcare3.png';
 import medcare4 from '../assets/medcare4.jpg';
 import { HiSearch } from 'react-icons/hi';
-import { LuCalendarClock } from "react-icons/lu"; 
-import { BsCloudCheck } from "react-icons/bs";
+import { LuCalendarClock } from 'react-icons/lu';
+import { BsCloudCheck } from 'react-icons/bs';
 import { LuAmbulance } from 'react-icons/lu';
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -24,55 +24,66 @@ const Home = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 w-full">
             <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 w-full">
-              Contact a Doctor
+              <Link to={'/contact'}>Contact a Doctor</Link>
             </button>
             <button className="text-blue-600 bg-white border px-6 py-3 rounded-lg font-bold text-lg hover:bg-blue-50 w-full">
-              Learn More About Us
+              <Link to={'/about'}>Learn More About Us</Link>
             </button>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-center md:py-10 gap-4 md:gap-12">
           <img
-            className="bg-[#014bec] h-60 w-50 md:h-80 md:w-60 rounded-2xl"
+            className="bg-[#014bec] h-60 w-50 md:h-80 md:w-60 rounded-2xl transition-transform duration-300 hover:scale-105"
             src={medcare1}
             alt="Doctor 1"
           />
           <div className="flex flex-col gap-4 md:gap-6">
             <img
-              className="bg-[#0335a1] rounded-2xl w-70 md:w-70"
+              className="bg-[#0335a1] rounded-2xl w-70 md:w-70 transition-transform duration-300 hover:scale-105"
               src={medcare2}
               alt="Doctor 2"
             />
             <img
-              className="bg-[#e17979] rounded-2xl w-70 md:w-70"
+              className="bg-[#e17979] rounded-2xl w-70 md:w-70 transition-transform duration-300 hover:scale-105"
               src={medcare3}
               alt="Doctor 3"
             />
           </div>
         </div>
       </section>
-      <section id='services' className='flex flex-col items-center text-center justify-center gap-2 mb-20 mt-8 scroll-mt-28 px-4 md:px-0'>
+      <section
+        id="services"
+        className="flex flex-col items-center text-center justify-center gap-2 mb-20 mt-8 scroll-mt-28 px-4 md:px-0"
+      >
         <h1 className="text-[40px] font-extrabold">Our Services</h1>
         <p className="text-xl text-gray-600 mb-6">
           Our patients are our priority. We provide quality healthcare services
           you can trust.
         </p>
         <div className="text-lg text-gray-900 font-bold grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center w-full">
-          <div className='flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#eff6ff] rounded-lg hover:bg-[#dbeafe]'>
-            <button className='p-3 rounded-full text-[#155dfc] bg-[#dbeafe]'><HiSearch  size={32}/></button>
-            <p >Find a Specialist</p>
+          <div className="flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#eff6ff] rounded-lg hover:bg-[#dbeafe]">
+            <button className="p-3 rounded-full text-[#155dfc] bg-[#dbeafe]">
+              <HiSearch size={32} />
+            </button>
+            <p>Find a Specialist</p>
           </div>
-          <div className='flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#f0fdf4] rounded-lg hover:bg-[#dbfce7]'>
-            <button className='bg-[#dbfce7] text-[#22c55e] p-3 rounded-full'><LuCalendarClock size={32} /> </button>
-            <p >Book Appointment</p>
+          <div className="flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#f0fdf4] rounded-lg hover:bg-[#dbfce7]">
+            <button className="bg-[#dbfce7] text-[#22c55e] p-3 rounded-full">
+              <LuCalendarClock size={32} />{' '}
+            </button>
+            <p>Book Appointment</p>
           </div>
-          <div className='flex flex-col items-center justify-center gap-4  py-4 px-10 bg-[#faf5ff] rounded-lg hover:bg-[#f3e8ff]'>
-            <button className='bg-[#f3e8ff] text-[#9810fa] p-3 rounded-full'><BsCloudCheck size={32}  /></button>
-            <p >Online Consultation</p>
+          <div className="flex flex-col items-center justify-center gap-4  py-4 px-10 bg-[#faf5ff] rounded-lg hover:bg-[#f3e8ff]">
+            <button className="bg-[#f3e8ff] text-[#9810fa] p-3 rounded-full">
+              <BsCloudCheck size={32} />
+            </button>
+            <p>Online Consultation</p>
           </div>
-          <div className='flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#fef2f2] rounded-lg hover:bg-[#ffe2e2]'>
-            <button className='bg-[#ffe2e2] text-[#f97316] p-3 rounded-full'><LuAmbulance size={32}  /></button>
-            <p >Emergency Care</p>
+          <div className="flex flex-col items-center justify-center gap-4 py-4 px-10 bg-[#fef2f2] rounded-lg hover:bg-[#ffe2e2]">
+            <button className="bg-[#ffe2e2] text-[#f97316] p-3 rounded-full">
+              <LuAmbulance size={32} />
+            </button>
+            <p>Emergency Care</p>
           </div>
         </div>
       </section>
@@ -87,7 +98,7 @@ const Home = () => {
             compassionate, reliable, and personalized care whenever you need it.
           </p>
           <button className="bg-blue-600 text-white px-5 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 w-fit">
-            Learn More
+            <Link to={'/about'}>Learn More</Link>
           </button>
         </div>
         <img className="w-120 h-80 rounded-2xl" src={medcare4} alt="Patient" />
